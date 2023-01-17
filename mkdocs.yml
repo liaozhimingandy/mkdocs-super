@@ -1,0 +1,9 @@
+site_name: My Docs
+theme: 
+  name: null
+  custom_dir: super
+  locale: zh
+
+# Page tree
+nav:
+  - Home: index.md
