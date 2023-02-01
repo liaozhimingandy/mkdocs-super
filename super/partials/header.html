@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg bg-primary sticky-top" data-bs-theme="dark">
+    <div class="container-fluid">
+        <img src="https://v5.bootcss.com/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24"
+             class="d-inline-block align-text-top">
+        {{ config.site_name }}
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav nav-pills me-auto mb-2 mb-lg-0">
+                {% for nav_item in nav %}
+                {% set index = loop.index %}
+                {% include "partials/tabs-item.html" %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</nav>

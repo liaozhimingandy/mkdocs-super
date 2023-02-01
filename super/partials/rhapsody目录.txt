@@ -1,0 +1,98 @@
+一）培训内容：Rhapsody引擎介绍和环境部署
+1、Rhapsody引擎概述
+  Rhapsody引擎的主要组成部分（引擎、IDE、管理控制台-WMC、……）
+
+2、Rhapsody引擎的安装与升级
+1) 部署要求
+a) Rhapsody引擎安装
+b) Rhapsody引擎升级
+
+3.Rhapsody管理控制台简介
+
+4.IDE开发工具安装
+
+5.Rhapsody Dashboard部署
+
+6.Rhapsody的文件系统（配置修改、系统日志）
+a)	管理控制台的汉化
+b)	日志文件（log.txt、wrapper.log、……）
+c)	rhapsody.properties文件
+d)	wrapper-local.conf文件
+
+
+二)Rhapsody IDE即开发环境介绍
+1)工程
+a) 路由
+b) 通信点
+c) 过滤器
+d) web service, js类
+
+2、Rhapsody引擎的日常管理介绍
+a) 配置管理
+b) 版本控制
+c) 角色控制
+
+
+7、Rhapsody管理控制台(功能菜单简介)
+a) 引擎监控
+b) 查找消息
+c) 通知方案
+d) 系统管理
+e) 系统状态
+f) 系统报告
+
+
+三）培训内容：数据库组件集成
+培训时长：1小时 
+培训时间：
+数据库组件（通讯点，DME和lookup过滤器）应用即数据库操作
+a)	数据库读、写操作
+b)	常用操作,存储过程,方法
+,注意点:
+
+
+四）培训内容：Web Service集成-hl7v3
+培训时长：1小时
+培训时间：
+webservice SOAP集成
+a)	在引擎上webservice服务搭建、测试等
+b)	引擎调用外部webservice服务、测试等
+
+
+五）培训内容：HTTP集成 --http restful
+培训时长：1小时
+培训时间：
+HTTP 集成
+a)	http服务快速搭建
+b)	引擎调用外部HTTP服务
+
+
+六）培训内容：TCP -hl7v2
+培训时长：1小时
+培训时间：
+TCP/IP、Directory等集成
+
+
+七）培训内容：Rhapsody开发的最佳实践工程架构搭建
+培训时长：1小时
+培训时间：
+a)	系统配置
+b)	通信点配置
+c)	路由配置
+d)	整体思路
+e)	工程架构搭建
+
+
+八）培训内容：调优故障排查
+培训时长：1小时
+培训时间：
+a)	日常运维
+b)	配置调优
+c)	常用的故障排除方法以及查漏补缺
+
+
+九) 高级内容
+    容器部署
+    ldap接管所有rhapsody认证系统
+    rhapsody的负载均衡
+

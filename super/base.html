@@ -1,14 +1,73 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
-  <body>
-    <h1>{% trans %}welcome{% endtrans %}</h1>
-    {% block content %}
-       {{ page.content }}
-    {% endblock %}
-  </body>
+<html lang="{{ config.theme.locale|default('en') }}">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.min.css" rel="stylesheet">
+    <style rel="stylesheet">
+        body {
+            background: #E9EBEE;
+            font-family: -apple-system-font, BlinkMacSystemFont, Microsoft YaHei, Microsoft YaHei UI, Helvetica Neue, PingFang SC, Hiragino Sans GB, Arial, sans-serif;
+            /* font-size: .875rem;
+             font-size: 14px; */
+
+        }
+    </style>
+</head>
+<body>
+<!-- 头部导航 -->
+{% block header %}
+{% include "partials/header.html" %}
+{% endblock %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2">
+                <!-- 递归遍历目录 -->
+                <nav class="nav flex-column">
+                  <ul>
+                      {% for nav_item in nav %}
+                     
+                      {#% if loop.index == 3 %#}
+                            {% set path = "nav-" ~ loop.index %}
+                            {% set level = 1 %}
+                           {% include "partials/nav-item.html" %}
+                       {#% endif %#}
+                    {% endfor %}
+                  </ul>
+                </nav>
+            </div>
+            <div class="col-8"> {{ page.content }}</div>
+            <div class="col-lg-2">
+                <label>目录</label>
+                <ul>
+                {% for item in page.toc %}
+                    {% for child in item.children %}
+                    <li>
+                        <a href="{{ child.url }}">
+                            {{ child.title }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% block content %}
+    </div>
+{% endblock %}
+<!-- 页脚 -->
+{% block footer %}
+    <div class="d-flex flex-column flex-sm-row justify-content-between fixed-bottom text-bg-secondary px-3 py-3">
+        <p>&copy; 2023 Company, Inc. All rights reserved.</p>
+        <ul class="list-unstyled d-flex">
+            <li class="ms-3"><a class="link-dark" href="#">a</a></li>
+            <li class="ms-3"><a class="link-dark" href="#">b</a></li>
+            <li class="ms-3"><a class="link-dark" href="#">v</a></li>
+        </ul>
+    </div>
+{% endblock %}
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.min.js"></script>
+</body>
 </html>

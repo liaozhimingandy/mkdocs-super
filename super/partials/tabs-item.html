@@ -1,0 +1,17 @@
+{% if nav_item.children %}
+	{% set title = title | default(nav_item.title) %}
+	{% set nav_item = nav_item.children | first %}
+	{% if nav_item.is_section %}
+		{% include "partials/tabs-item.html" %}
+		{% else %}
+			<li class="nav-item" role="presentation">
+				 <button class="btn btn-primary" id="pills-tab-{{ index }}" data-bs-toggle="pill" data-bs-target="#pills-tab-{{ index }}" type="button" role="tab" aria-controls="pills" aria-selected="false">{{ title }}</button>
+				<!-- <a class="nav-link"  href="{{ nav_item.url | url }}"> {{ title }}</a> -->
+			</li>
+	{% endif %}
+	{% else %}
+	<li class="nav-item" role="presentation">
+				 <button class="btn btn-primary" id="pills-tab-{{ index }}" data-bs-toggle="pill" data-bs-target="#pills-tab-{{ index }}" type="button" role="tab" aria-controls="pills" aria-selected="false">{{ nav_item.title }}</button>
+				<!-- <a class="nav-link"  href="{{ nav_item.url | url }}"> {{ title }}</a> -->
+			</li>
+{% endif %}
